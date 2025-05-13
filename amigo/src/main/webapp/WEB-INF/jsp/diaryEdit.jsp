@@ -36,7 +36,7 @@
 			タイトル：<input type="text" name="title" value="${diary.title}" size="40" />
 		</p>
 		<p>
-			本文：
+			本 文 ：
 			<textarea name="text" rows="4" cols="40">${diary.text}</textarea>
 		</p>
 		<p>
