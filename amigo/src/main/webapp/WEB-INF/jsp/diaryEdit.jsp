@@ -32,26 +32,27 @@
 	<form action="EditMutterServlet" method="post"
 		enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${diary.id}" />
-		<p>
-			タイトル：<input type="text" name="title" value="${diary.title}" size="40" />
-		</p>
-		<p>
-			本 文 ：
-			<textarea name="text" rows="4" cols="40">${diary.text}</textarea>
-		</p>
-		<p>
-			メイン画像（変更する場合のみ選択）： <input type="file" name="image" accept="image/*"
-				onchange="previewImage(event, 'mainPreview')">
-			<c:if test="${not empty diary.image}">
-				<img src="ImageServlet?id=${diary.id}&type=main"
-					style="max-width: 100px; max-height: 100px;"> 現在の画像
-            </c:if>
-			<img id="mainPreview" src="#" alt="メイン画像プレビュー"
+		 <table border="1" cellspacing="0" cellpadding="8">
+		<tr>
+			<th>タイトル</th>
+			<td><input type="text" name="title" value="${diary.title}" size="40" /></td>
+			</tr>
+		
+		<th>本文</th>
+		<td><textarea name="text" rows="4" cols="40">${diary.text}</textarea></td>
+		</tr>
+		<th>メイン画像<br>（変更する場合のみ選択）</th>
+			<td>
+				 <input type="file" name="image" accept="image/*"
+					onchange="previewImage(event, 'mainPreview')"><br>
+				 <img id="mainPreview" src="#" alt="メイン画像プレビュー"
 				style="display: none; max-width: 200px; max-height: 200px;">
-		</p>
+		</td>
+		</tr>
+		</table>
+		<br>
 		<input type="submit" value="更新" />
 	</form>
-	<br>
 	<a href="DiaryDetailServlet?id=${diary.id}">詳細に戻る</a>
 </body>
 </html>

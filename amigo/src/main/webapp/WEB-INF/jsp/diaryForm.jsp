@@ -31,31 +31,45 @@
 <body>
 	<h1>新しい日記を投稿</h1>
 	<form action="Main" method="post" enctype="multipart/form-data">
-		<div class="form-group">
-			<label for="title">タイトル：</label> <input type="text" id="title"
-				name="title" size="40">
-		</div>
-		<div class="form-group">
-			<label for="iconImage">アイコン画像：</label> <input type="file"
-				id="iconImage" name="iconImage" accept="image/*"
-				onchange="previewImage(event, 'iconPreview')"> <img
-				id="iconPreview" src="#" alt="アイコンプレビュー"
+		<table border="1" cellpadding="8">
+		<tr>
+			<th>タイトル</th>
+			<td>
+			<input type="text" id="title" name="title" size="40"></td>
+			</tr>
+			<tr>
+			<th>アイコン</th>
+			<td>
+			<input type="file" id="iconImage" name="iconImage" accept="image/*"
+				onchange="previewImage(event, 'iconPreview')">
+			<br>
+			<img id="iconPreview" src="#" alt="アイコンプレビュー"
 				style="display: none; max-width: 100px; max-height: 100px;">
-		</div>
-		<div class="form-group">
-			<label for="text">本文：</label>
-			<textarea id="text" name="text" rows="4" cols="40"></textarea>
-		</div>
-		<div class="form-group">
-			<label for="image">画像（任意）：</label> <input type="file" id="image"
-				name="image" accept="image/*"
-				onchange="previewImage(event, 'mainPreview')"> <img
-				id="mainPreview" src="#" alt="メイン画像プレビュー"
-				style="display: none; max-width: 200px; max-height: 200px;">
-		</div>
-		<button type="submit">投稿</button>
+		</td>
+		</tr>
+		<tr>
+			<th>本文</th>
+			<td><textarea id="text" name="text" rows="4" cols="42"></textarea></td>
+		</tr>
+		<tr>
+			<th>画像</th>
+				<td>
+					<input type="file" id="image" name="image" accept="image/*"
+						onchange="previewImage(event, 'mainPreview')">
+					<br>
+					<img id="mainPreview" src="#" alt="メイン画像プレビュー"
+						style="display: none; max-width: 200px; max-height: 200px;">	
+			</td>
+		</tr>
+	</table>
+	<br>
+	<button type="submit">投稿</button>
 	</form>
 	<br>
 	<a href="Main">一覧に戻る</a>
 </body>
 </html>
+
+
+		
+		
