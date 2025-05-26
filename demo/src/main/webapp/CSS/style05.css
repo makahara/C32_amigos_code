@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  /*background-color:lemonchiffon;*/
+  background-image: url(img/background04.jpg);
+  }
